@@ -17,9 +17,9 @@ guard 'shell' do
     puts "Pathname = #{path}"
     
     if path.exist?
-      `growlnotify -a Dropbox Data Mustard -m "File updated: #{Pathname.new(m[0])}"`
+      `growlnotify -a Finder Data Mustard -m "File updated: #{Pathname.new(m[0])}"`
     else
-      `growlnotify -a Dropbox Data Mustard -m "File deleted: #{Pathname.new(m[0])}"`
+      `growlnotify -a Finder Data Mustard -m "File deleted: #{Pathname.new(m[0])}"`
     end
   end
 end

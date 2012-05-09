@@ -5,7 +5,7 @@
 #   watch(%r{file/path}) { `command(s)` }
 #
 
-# require 'growl'
+require 'growl'
 require "pathname"
 
 # notification :growl
@@ -16,10 +16,17 @@ guard 'shell' do
     path = Pathname.new(m[0])
     puts "Pathname = #{path}"
     
+    notification = Growl.new
+    notification.appIcon = "Finder"
+    
     if path.exist?
-      `growlnotify -a Finder Data Mustard -m "File updated: #{Pathname.new(m[0])}"`
+      notification.message = "File updated: #{path}"
     else
-      `growlnotify -a Finder Data Mustard -m "File deleted: #{Pathname.new(m[0])}"`
+      notification.message = "File deleted: #{path}"
     end
+    
+    notification.run
   end
 end
+
+# `growlnotify -a Finder Data Mustard -m "File updated: #{path}"`

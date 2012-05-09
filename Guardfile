@@ -18,6 +18,7 @@ guard 'shell' do
     
     notification = Growl.new
     notification.appIcon = "Finder"
+    notification.title = "Data Mustard"
     
     if path.exist?
       notification.message = "File updated: #{path}"

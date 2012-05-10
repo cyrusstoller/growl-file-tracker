@@ -14,3 +14,5 @@ This is what I ended up using with `homebrew`
 ```
 brew install https://raw.github.com/mxcl/homebrew/bd40f1e5f89fad962b021c827d56a9fdea0c847d/Library/Formula/growlnotify.rb
 ```
+
+Got some inspiration from the gem that was shared by Pivotal Tracker called [Kilt](https://github.com/dcrec1/kilt/).
